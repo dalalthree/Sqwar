@@ -24,6 +24,8 @@ public class Tower extends Rectangle
     private int damage = 34;
     //the type of tower this is
     private int type = 0;
+    //whether or not bullets can hit multiple enemies
+    private boolean penetration = false;
     
     public Tower(int x, int y, int type)
     {
@@ -34,13 +36,15 @@ public class Tower extends Rectangle
         {
         	health = 150;
         	wait = 60;
-        	damage = 25;
+        	damage = 18;
+          penetration = true;
         }
         else if(type == 2)
         {
         	health = 500;
-        	wait = 200;
-        	damage = 250;
+        	wait = 600;
+        	damage = 200;
+          penetration = true;
         }
         //sets the startign health to this towers current health
         startingHealth = health;
@@ -116,7 +120,7 @@ public class Tower extends Rectangle
                         System.out.print(e);
                     }
                     //makes a new bullet a little to the right of this towers cords, and provides the amount of damage
-                    Screen.bullets.add(new Bullet(this.x - 10, this.y, this.damage));
+                    Screen.bullets.add(new Bullet(this.x - 10, this.y, this.damage, this.penetration));
                     //resets the timer
                     tick = 0;
                     break;
@@ -132,7 +136,7 @@ public class Tower extends Rectangle
     public void draw(Graphics g)
     {
         //draws the tower
-    	g.drawImage(Screen.TowerBlock[type], x, y, width, height, null);
+    	g.drawImage(Screen.towerBlock[type], x, y, width, height, null);
         //draws a health bar
         g.setColor(new Color(155, 0, 0));
         g.drawRect(x + width - 10, y, 10, height);

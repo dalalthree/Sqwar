@@ -64,17 +64,17 @@ public class Menu{
             
             g.setFont(new Font("Courrier New", Font.BOLD, 15));
 
-            g.drawImage(Screen.TowerBlock[0], 20, 310, 80, 80, null);
+            g.drawImage(Screen.towerBlock[0], 20, 310, 80, 80, null);
             g.drawString("Health: 100", 110, 330);
             g.drawString("Fires every: 300ms", 110, 360);
             g.drawString("Damage: 34", 110, 390);
 
-            g.drawImage(Screen.TowerBlock[1], 250, 310, 80, 80, null);
+            g.drawImage(Screen.towerBlock[1], 250, 310, 80, 80, null);
             g.drawString("Health: 150", 340, 330);
             g.drawString("Fires every: 150ms", 340, 360);
             g.drawString("Damage: 25", 340, 390);
 
-            g.drawImage(Screen.TowerBlock[2], 480, 310, 80, 80, null);
+            g.drawImage(Screen.towerBlock[2], 480, 310, 80, 80, null);
             g.drawString("Health: 500", 570, 330);
             g.drawString("Fires every: 3000ms", 570, 360);
             g.drawString("Damage: 250", 570, 390);

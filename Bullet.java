@@ -9,12 +9,14 @@ public class Bullet extends Rectangle
 {
     //the amount of damage this bullet does
     private int damage;
+    private boolean penetration;
 
-    public Bullet(int x, int y, int damage)
+    public Bullet(int x, int y, int damage, boolean penetration)
     {
         //sets the rectangle and damage of this bullet based on what is given
-		setBounds(x-10, y, Screen.tileSize, Screen.tileSize);
+		    setBounds(x-10, y, Screen.tileSize, Screen.tileSize);
         this.damage = damage;
+        this.penetration = penetration;
     }
 
     //moves the bullet
@@ -46,7 +48,7 @@ public class Bullet extends Rectangle
                 //causes damage to the attacker
                 Screen.attackers.get(i).takeDamage(this.damage);
                 //returns that it did damage
-                return true;
+                return !this.penetration;
             }
         }
         //returns that it didn't do damage

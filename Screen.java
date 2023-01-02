@@ -21,11 +21,11 @@ public class Screen extends JPanel implements Runnable{
     //creates arrays to store all the images being imported to be used in the game
     //even the types of objects where there is only one image uses arrays for expandabilty and uniformness
     public static Image[] groundBlock = new Image[1];
-    public static Image[] StoreBlock = new Image[1];
-    public static Image[] CoinBlock = new Image[1];
+    public static Image[] storeBlock = new Image[1];
+    public static Image[] coin = new Image[1];
     public static Image[] attacker = new Image[4];
     public static Image[] bullet = new Image[1];
-    public static Image[] TowerBlock = new Image[4];
+    public static Image[] towerBlock = new Image[4];
 
     //store the width and height of the screen
     public static int myWidth, myHeight;
@@ -87,18 +87,18 @@ public class Screen extends JPanel implements Runnable{
         groundBlock[0] = new ImageIcon(Value.image_groundtile).getImage();
         groundBlock[0] = createImage(new FilteredImageSource(groundBlock[0].getSource(), new CropImageFilter(0, 0, 31, 31)));
 
-        StoreBlock[0] = new ImageIcon(Value.image_storepiece).getImage();
-        CoinBlock[0] = new ImageIcon(Value.image_coin).getImage();
+        storeBlock[0] = new ImageIcon(Value.image_storepiece).getImage();
+        coin[0] = new ImageIcon(Value.image_coin).getImage();
         bullet[0] = new ImageIcon(Value.image_bullet).getImage();
         
         attacker[0] = new ImageIcon(Value.image_attacker2).getImage();
         attacker[1] = new ImageIcon(Value.image_attacker3).getImage();
         attacker[2] = new ImageIcon(Value.image_attacker4).getImage();
         attacker[3] = new ImageIcon(Value.image_attacker1).getImage();
-        TowerBlock[0] = new ImageIcon(Value.image_towerblock1).getImage();
-        TowerBlock[1] = new ImageIcon(Value.image_towerblock2).getImage();
-        TowerBlock[2] = new ImageIcon(Value.image_towerblock3).getImage();
-        TowerBlock[3] = new ImageIcon(Value.image_towerblockX).getImage();
+        towerBlock[0] = new ImageIcon(Value.image_towerblock1).getImage();
+        towerBlock[1] = new ImageIcon(Value.image_towerblock2).getImage();
+        towerBlock[2] = new ImageIcon(Value.image_towerblock3).getImage();
+        towerBlock[3] = new ImageIcon(Value.image_towerblockX).getImage();
     }
 
     public void define()
@@ -193,7 +193,7 @@ public class Screen extends JPanel implements Runnable{
         
         //draws the tower on the mouse if its in the room area of the screen
         if(mse.y < Room.mapHeight * tileSize)
-            g.drawImage(Screen.TowerBlock[Store.selected], mse.x - tileSize / 2, mse.y - tileSize / 2, tileSize, tileSize, null); 
+            g.drawImage(Screen.towerBlock[Store.selected], mse.x - tileSize / 2, mse.y - tileSize / 2, tileSize, tileSize, null); 
 
         //draws the storee
         store.draw(g);

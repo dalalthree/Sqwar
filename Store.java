@@ -1,8 +1,4 @@
 
-/**
- * Author: Chris Yang
- */
-
 import java.awt.*;
 
 public class Store
@@ -18,7 +14,7 @@ public class Store
     //the buttons in the shop
     private Rectangle[] button;
     //the prices in order, off the options in the shop
-    public static final int[] prices = {1, 4, 8};
+    public static final int[] prices = {1, 3, 7};
 
     
     public Store()
@@ -136,12 +132,12 @@ public class Store
             if(i < 3)
                 g.drawString("$"+prices[i], button[i].x + Screen.tileSize / 3, button[i].y + button[i].height + 20);
                 //draws the image of the tower
-            g.drawImage(Screen.StoreBlock[0], button[i].x, button[i].y, button[i].width, button[i].height, null);
-            g.drawImage(Screen.TowerBlock[i], button[i].x, button[i].y, button[i].width, button[i].height, null);
+            g.drawImage(Screen.storeBlock[0], button[i].x, button[i].y, button[i].width, button[i].height, null);
+            g.drawImage(Screen.towerBlock[i], button[i].x, button[i].y, button[i].width, button[i].height, null);
         }
         
         //draws the users money and the coin icon
-        g.drawImage(Screen.CoinBlock[0], buttonCoins.x, buttonCoins.y, buttonCoins.width, buttonCoins.height, null); 
+        g.drawImage(Screen.coin[0], buttonCoins.x, buttonCoins.y, buttonCoins.width, buttonCoins.height, null); 
         g.setFont(new Font("Courrier New", Font.BOLD, 14));
         g.setColor(Color.WHITE);
         g.drawString("" + (int)Screen.cash, buttonCoins.x + buttonCoins.width + 6, buttonCoins.y + 15);
