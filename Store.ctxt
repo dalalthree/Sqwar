@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Store
-comment1.params=
-comment1.target=Store()
-comment2.params=
-comment2.target=void\ define()
-comment3.params=g
-comment3.target=void\ draw(java.awt.Graphics)
-numComments=4
